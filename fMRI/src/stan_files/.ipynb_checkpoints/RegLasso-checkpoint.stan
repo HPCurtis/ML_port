@@ -51,6 +51,6 @@ generated quantities{ //predict responses test set
 	y_test = normal_rng(mu + xtest_std * beta, sigma);
     vector[N] log_lik;
       for (n in 1:N) {
-        log_lik[n] = normal_lpdf(ytrain_std[n] | mu + xtrain_std[n] * beta);
+        log_lik[n] = normal_lpmf(ytrain_std[n] | mu + xtrain_std[n] * beta);
       }
 }	
